@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import { CiStar } from "react-icons/ci";
 const Services = () => {
   const [services, setServices] = useState([]);
 
@@ -26,7 +26,10 @@ const Services = () => {
               <h2 className="card-title">{service?.serviceName}</h2>
               <div className="flex justify-between">
                 <p>Price: {service?.price}</p>
-                <p>Rating: {service?.rating}</p>
+                <p className=" flex items-center gap-1">
+                  Rating: {service?.rating}
+                  <CiStar className="bg-amber-300" />
+                </p>
               </div>
               <div className="card-actions justify-center pt-2">
                 <button className="btn btn-primary">View Details</button>

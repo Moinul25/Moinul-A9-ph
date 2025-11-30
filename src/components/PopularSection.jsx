@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { CiStar } from "react-icons/ci";
 
 const PopularSection = () => {
   const [services, setServices] = useState([]);
@@ -10,29 +11,42 @@ const PopularSection = () => {
       .catch((err) => console.log(err));
   }, []);
 
-  console.log(services);
-
   return (
-    <div className="mt-8 w-11/12 mx-auto ">
-      <div>
-        <h2 className="font-bold text-3xl text-center">
-          Popular Winter Care Services
-        </h2>
-      </div>
-      <div className="grid grid-cols-3 mt-8">
+    <div className="mt-12 w-11/12 mx-auto">
+      <h2 className="font-bold text-3xl text-center mb-10">
+        Popular Winter Care Services
+      </h2>
+
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {services.slice(0, 3).map((service) => (
-          <div className="card bg-base-100 w-88 h-96 mt-4 shadow-sm ">
+          <div
+            key={service.id}
+            className="card bg-base-100 shadow-lg border border-gray-200 rounded-xl"
+          >
             <figure>
-              <img className="object-cover" src={service?.image} alt="Images" />
+              <img
+                src={service?.image}
+                alt={service?.serviceName}
+                className="w-full h-48 object-cover rounded-t-xl"
+              />
             </figure>
+
             <div className="card-body">
-              <h2 className="card-title">{service?.serviceName}</h2>
-              <div className="flex justify-between">
-                <p>Price: {service?.price}</p>
-                <p>Rating: {service?.rating}</p>
+              <h2 className="card-title text-lg font-semibold">
+                {service?.serviceName}
+              </h2>
+
+              <div className="flex justify-between text-sm mt-1">
+                <p className="font-medium">Price: ${service?.price}</p>
+
+                <p className="flex items-center gap-1">
+                  {service?.rating}
+                  <CiStar className="text-amber-400" />
+                </p>
               </div>
-              <div className="card-actions justify-center pt-2">
-                <button className="btn btn-primary">View Details</button>
+
+              <div className="card-actions justify-center pt-3">
+                <button className="btn btn-primary w-full">View Details</button>
               </div>
             </div>
           </div>
