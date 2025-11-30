@@ -46,11 +46,11 @@ const Footer = () => {
               <span> Pet Care in Winter</span>
             </li>
             <li className="flex space-x-2">
-              <img src={"/insta.png"} alt="" /> <span>@CS — Ticket System</span>
+              <img src={"/insta.png"} alt="" /> <span>Instagram</span>
             </li>
             <li className="flex space-x-2">
               <img src={"/facebook.png"} alt="" />
-              <span> Pet Care in Winter</span>
+              <span> Facebook</span>
             </li>
             <li className="flex space-x-2.5">
               <img src={"/sms.png"} alt="" />

@@ -1,0 +1,110 @@
+[
+  {
+    "serviceId": 1,
+    "serviceName": "Winter Coat Fitting for Dogs",
+    "providerName": "PawCare Studio",
+    "providerEmail": "info@pawcare.com",
+    "price": 25,
+    "rating": 4.9,
+    "slotsAvailable": 4,
+    "description": "Custom coat fitting and warm outfit options to keep your dog comfortable in the cold.",
+    "image": "https://i.postimg.cc/9MRfTJg3/pexels-radik-2707-170977881-15629080.jpg",
+    "category": "Clothing"
+  },
+  {
+    "serviceId": 2,
+    "serviceName": "Winter Grooming & Paw Treatment",
+    "providerName": "CozyPets Grooming",
+    "providerEmail": "hello@cozypets.com",
+    "price": 30,
+    "rating": 4.8,
+    "slotsAvailable": 3,
+    "description": "Professional winter grooming with paw balm and cold-safe shampoo.",
+    "image": "https://i.postimg.cc/Kz82Gn01/grooming.jpg",
+    "category": "Grooming"
+  },
+  {
+    "serviceId": 3,
+    "serviceName": "Heated Pet Bed Installation",
+    "providerName": "WarmNest Services",
+    "providerEmail": "contact@warmnest.com",
+    "price": 35,
+    "rating": 4.8,
+    "slotsAvailable": 4,
+    "description": "Soft heated sleeping setup to keep pets warm during the winter cold.",
+    "image": "https://i.postimg.cc/jdGkgzN7/Accessories.jpg",
+    "category": "Accessories"
+  },
+  {
+    "serviceId": 4,
+    "serviceName": "Winter Health Check-up",
+    "providerName": "PetCare Clinic",
+    "providerEmail": "clinic@petcare.com",
+    "price": 40,
+    "rating": 4.9,
+    "slotsAvailable": 2,
+    "description": "Full winter health check-up to detect cold-related health risks.",
+    "image": "https://i.postimg.cc/BZCSGnpR/health.jpg",
+    "category": "Health"
+  },
+  {
+    "serviceId": 5,
+    "serviceName": "Winter Dog Walking Service",
+    "providerName": "SnowSteps Walkers",
+    "providerEmail": "walk@snowsteps.com",
+    "price": 15,
+    "rating": 4.6,
+    "slotsAvailable": 6,
+    "description": "Safe outdoor dog walking service with snow-safe boots.",
+    "image": "https://i.postimg.cc/fyR6sDTS/walking.jpg",
+    "category": "Walking"
+  },
+  {
+    "serviceId": 6,
+    "serviceName": "Winter Diet Consultation",
+    "providerName": "PetNutri Care",
+    "providerEmail": "diet@petnutri.com",
+    "price": 20,
+    "rating": 4.7,
+    "slotsAvailable": 3,
+    "description": "Personalized nutrition plan to strengthen immune system during winter.",
+    "image": "https://i.postimg.cc/mrVv5PTW/nutrition.jpg",
+    "category": "Nutrition"
+  },
+  {
+    "serviceId": 7,
+    "serviceName": "Winter Training Session",
+    "providerName": "FrostyPaws Academy",
+    "providerEmail": "train@frostypaws.com",
+    "price": 22,
+    "rating": 4.5,
+    "slotsAvailable": 5,
+    "description": "Indoor warm training session for dogs to stay active during cold weather.",
+    "image": "https://i.postimg.cc/WpQ1nH9Z/training.jpg",
+    "category": "Training"
+  },
+  {
+    "serviceId": 8,
+    "serviceName": "Winter Pet Photography",
+    "providerName": "SnowLens Studio",
+    "providerEmail": "photo@snowlens.com",
+    "price": 50,
+    "rating": 4.9,
+    "slotsAvailable": 2,
+    "description": "Cozy winter-themed photo session for pets.",
+    "image": "https://i.postimg.cc/pVn2pB2t/img-2.jpg",
+    "category": "Photography"
+  },
+  {
+    "serviceId": 9,
+    "serviceName": "Emergency Winter Rescue Service",
+    "providerName": "SafePaws Rescue",
+    "providerEmail": "help@safepaws.com",
+    "price": 0,
+    "rating": 5.0,
+    "slotsAvailable": 24,
+    "description": "24/7 emergency rescue support for pets stuck in winter hazards.",
+    "image": "https://i.postimg.cc/JnDzCsRw/emargency.jpg",
+    "category": "Emergency"
+  }
+]

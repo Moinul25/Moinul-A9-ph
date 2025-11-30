@@ -9,19 +9,19 @@ import i2 from "../assets/img-1.jpg";
 import i3 from "../assets/img-3.jpg";
 const Slider = () => {
   return (
-    <>
+    <div className="mt-10">
       <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
         <SwiperSlide>
-          <img className="w-full h-[400px] object-cover" src={i1} alt="" />
+          <img className="w-full h-[480px] object-cover" src={i1} alt="" />
         </SwiperSlide>
         <SwiperSlide>
-          <img className="w-full h-[400px] object-cover" src={i2} alt="" />
+          <img className="w-full h-[480px] object-cover" src={i2} alt="" />
         </SwiperSlide>
         <SwiperSlide>
           <img className="w-full h-[480px] object-cover" src={i3} alt="" />
         </SwiperSlide>
       </Swiper>
-    </>
+    </div>
   );
 };
 
