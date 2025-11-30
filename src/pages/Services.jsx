@@ -12,7 +12,7 @@ const Services = () => {
 
   return (
     <div className="w-11/12 mx-auto">
-      <div className="grid grid-cols-3 mt-8">
+      <div className="grid  md:grid-cols-2 lg:grid-cols-3 mt-8">
         {services.map((service) => (
           <div className="card bg-base-100 w-88 h-96 mt-4 shadow-sm ">
             <figure>

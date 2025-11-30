@@ -1,4 +1,10 @@
 import React from "react";
+import {
+  FaFacebook,
+  FaInstagram,
+  FaTwitter,
+  FaVoicemail,
+} from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -41,19 +47,19 @@ const Footer = () => {
         <div>
           <h4 className="text-white font-semibold mb-2">Social Links</h4>
           <ul className="space-y-2 text-sm">
-            <li className="flex space-x-2">
-              <img src={"/twiter.png"} alt="" />
+            <li className="flex space-x-1 items-center">
+              <FaTwitter />
               <span> Pet Care in Winter</span>
             </li>
-            <li className="flex space-x-2">
-              <img src={"/insta.png"} alt="" /> <span>Instagram</span>
+            <li className="flex space-x-1 items-center">
+              <FaInstagram /> <span>Instagram</span>
             </li>
-            <li className="flex space-x-2">
-              <img src={"/facebook.png"} alt="" />
+            <li className="flex space-x-1 items-center">
+              <FaFacebook />
               <span> Facebook</span>
             </li>
-            <li className="flex space-x-2.5">
-              <img src={"/sms.png"} alt="" />
+            <li className="flex space-x-1 items-center">
+              <FaVoicemail />
               <span> support@cst.com</span>
             </li>
           </ul>

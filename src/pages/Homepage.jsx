@@ -2,6 +2,7 @@ import React from "react";
 import Slider from "../components/Slider";
 import PopularSection from "../components/PopularSection";
 import MeetOurVets from "../components/MeetOurVets";
+import WinterCareTips from "../components/WinterCareTips";
 
 const Homepage = () => {
   return (
@@ -9,6 +10,7 @@ const Homepage = () => {
       <title>WarmPaws – Pet Care in Winter</title>
       <Slider></Slider>
       <PopularSection></PopularSection>
+      <WinterCareTips></WinterCareTips>
       <MeetOurVets></MeetOurVets>
     </div>
   );
