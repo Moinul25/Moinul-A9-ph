@@ -1,13 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import { MdOutlinePets } from "react-icons/md";
 import { Link } from "react-router";
+import { Authcontext } from "../provider/AuthProvider";
+import auth from "../firebase/firebase.config";
+import { signOut } from "firebase/auth";
 const Navbar = () => {
+  const { user } = useContext(Authcontext);
+
+  const handleSignOut = () => {
+    signOut(auth);
+  };
+
   return (
     <nav className="bg-base-100 shadow-sm sticky top-0 z-50">
       <div className="navbar max-w-7xl mx-auto px-4">
-        {/* Start */}
         <div className="navbar-start">
-          {/* Mobile Menu */}
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
               <svg
@@ -42,7 +49,6 @@ const Navbar = () => {
             </ul>
           </div>
 
-          {/* Logo */}
           <Link
             to="/"
             className="text-2xl font-bold flex items-center gap-2 text-primary"
@@ -52,7 +58,6 @@ const Navbar = () => {
           </Link>
         </div>
 
-        {/* Center Menu */}
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 text-md font-medium gap-2">
             <li>
@@ -72,13 +77,21 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
+        {user && (
+          <div className="navbar-end">
+            <btn onClick={handleSignOut} className="btn btn-primary">
+              Logout
+            </btn>
+          </div>
+        )}
 
-        {/* Right */}
-        <div className="navbar-end">
-          <Link to="/login" className="btn btn-primary px-6 rounded-full">
-            Login
-          </Link>
-        </div>
+        {!user && (
+          <div className="navbar-end">
+            <Link to="/login" className="btn btn-primary px-6 rounded-full">
+              Login
+            </Link>
+          </div>
+        )}
       </div>
     </nav>
   );

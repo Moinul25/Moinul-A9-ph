@@ -5,7 +5,8 @@ import { updateProfile } from "firebase/auth";
 import auth from "../firebase/firebase.config";
 
 const Register = () => {
-  const { registerUserWithEmailPassword, setUser } = useContext(Authcontext);
+  const { registerUserWithEmailPassword, setUser, user } =
+    useContext(Authcontext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -31,7 +32,7 @@ const Register = () => {
         console.log(err);
       });
   };
-
+  console.log(user);
   return (
     <div className=" flex justify-center items-center min-h-screen">
       <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl py-4">
