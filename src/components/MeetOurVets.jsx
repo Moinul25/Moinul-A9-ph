@@ -27,9 +27,9 @@ const vets = [
 
 const MeetOurVets = () => {
   return (
-    <div className="py-12 bg-base-100">
+    <div className="py-4 bg-base-100">
       <h2 className="text-3xl font-bold text-center text-primary mb-10">
-        Meet Our Vets
+        Meet Our Expert Vets
       </h2>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
