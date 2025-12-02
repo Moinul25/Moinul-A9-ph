@@ -3,9 +3,10 @@ import React, { useContext } from "react";
 import { Link } from "react-router";
 import auth from "../firebase/firebase.config";
 import { Authcontext } from "../provider/AuthProvider";
+import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
-  const { setUser, user } = useContext(Authcontext);
+  const { setUser, handleGoogleSignIn } = useContext(Authcontext);
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -21,7 +22,15 @@ const Login = () => {
         console.log(err);
       });
   };
-  console.log(user);
+
+  const googleSignIn = () => {
+    handleGoogleSignIn()
+      .then((result) => {
+        const user = result.user;
+        setUser(user);
+      })
+      .catch((error) => console.log(error));
+  };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4 ">
@@ -60,8 +69,20 @@ const Login = () => {
               </Link>
             </p>
           </div>
-
           <button className="btn btn-neutral w-full mt-2">Login</button>
+          <div className="px-6 mt-2">
+            <div className="divider">OR</div>
+          </div>
+
+          <div className="px-6 mb-3">
+            <button
+              onClick={googleSignIn}
+              className="btn btn-outline w-full flex items-center "
+            >
+              <FcGoogle size={24} />
+              Continue with Google
+            </button>
+          </div>
         </form>
       </div>
     </div>

@@ -3,9 +3,10 @@ import { Link } from "react-router";
 import { Authcontext } from "../provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import auth from "../firebase/firebase.config";
+import { FcGoogle } from "react-icons/fc";
 
 const Register = () => {
-  const { registerUserWithEmailPassword, setUser, user } =
+  const { registerUserWithEmailPassword, setUser, user, handleGoogleSignIn } =
     useContext(Authcontext);
 
   const handleSubmit = (e) => {
@@ -33,8 +34,17 @@ const Register = () => {
       });
   };
   console.log(user);
+
+  const googleSignUp = () => {
+    handleGoogleSignIn()
+      .then((result) => {
+        const user = result.user;
+        setUser(user);
+      })
+      .catch((error) => console.log(error));
+  };
   return (
-    <div className=" flex justify-center items-center min-h-screen">
+    <div className=" flex justify-center items-center min-h-screen mt-8">
       <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl py-4">
         <h2 className="font-semibold text-2xl text-center">
           Register your account!
@@ -84,6 +94,19 @@ const Register = () => {
               Login
             </Link>
           </h2>
+          <div className=" px-6">
+            <div className="divider">OR</div>
+          </div>
+
+          <div className="px-6 space-y-1 mb-1">
+            <button
+              onClick={googleSignUp}
+              className="btn btn-outline w-full flex items-center gap-2"
+            >
+              <FcGoogle />
+              Continue with Google
+            </button>
+          </div>
         </form>
       </div>
     </div>
