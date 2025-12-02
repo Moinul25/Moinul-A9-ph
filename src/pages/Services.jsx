@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { CiStar } from "react-icons/ci";
+import { Link } from "react-router";
+import { motion } from "framer-motion";
 const Services = () => {
   const [services, setServices] = useState([]);
 
@@ -12,30 +14,45 @@ const Services = () => {
 
   return (
     <div className="w-11/12 mx-auto">
-      <div className="grid  md:grid-cols-2 lg:grid-cols-3 mt-8">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
         {services.map((service) => (
-          <div className="card bg-base-100 w-88 h-96 mt-4 shadow-sm ">
-            <figure>
+          <motion.div
+            key={service.serviceId}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="card bg-base-100 rounded-xl shadow-md overflow-hidden"
+          >
+            <figure className="h-48">
               <img
-                className="w-full object-cover"
+                className="w-full h-full object-cover"
                 src={service?.image}
                 alt="Images"
               />
             </figure>
-            <div className="card-body">
-              <h2 className="card-title">{service?.serviceName}</h2>
-              <div className="flex justify-between">
-                <p>Price: {service?.price}</p>
-                <p className=" flex items-center gap-1">
-                  Rating: {service?.rating}
-                  <CiStar className="bg-amber-300" />
+
+            <div className="p-4 space-y-2">
+              <h2 className="card-title text-lg font-semibold">
+                {service?.serviceName}
+              </h2>
+
+              <div className="flex justify-between text-gray-700">
+                <p>Price: ${service?.price}</p>
+                <p className="flex items-center gap-1">
+                  {service?.rating}
+                  <CiStar className="text-amber-400 text-xl" />
                 </p>
               </div>
+
               <div className="card-actions justify-center pt-2">
-                <button className="btn btn-primary">View Details</button>
+                <Link to={`/details/${service?.serviceId}`}>
+                  <button className="btn btn-primary w-full">
+                    View Details
+                  </button>
+                </Link>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>

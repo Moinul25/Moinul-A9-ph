@@ -1,12 +1,15 @@
 import { signInWithEmailAndPassword } from "firebase/auth";
-import React, { useContext } from "react";
-import { Link } from "react-router";
+import React, { useContext, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router";
 import auth from "../firebase/firebase.config";
 import { Authcontext } from "../provider/AuthProvider";
 import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
   const { setUser, handleGoogleSignIn } = useContext(Authcontext);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const [email, setEmail] = useState("");
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -17,6 +20,7 @@ const Login = () => {
       .then((userCredential) => {
         const user = userCredential.user;
         setUser(user);
+        navigate(location.state ? location.state : "/");
       })
       .catch((err) => {
         console.log(err);
@@ -28,8 +32,13 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         setUser(user);
+        navigate(location.state);
       })
       .catch((error) => console.log(error));
+  };
+
+  const handleForget = () => {
+    navigate(`/forget/${email}`);
   };
 
   return (
@@ -41,6 +50,7 @@ const Login = () => {
           <label className="form-control w-full">
             <span className="label label-text font-semibold pb-1">Email</span>
             <input
+              onChange={(e) => setEmail(e.target.value)}
               name="email"
               type="email"
               placeholder="Enter your email"
@@ -61,7 +71,9 @@ const Login = () => {
           </label>
 
           <div className="py-1 ">
-            <a className="link link-hover text-sm">Forgot password?</a>
+            <button onClick={handleForget} className="link link-hover text-sm">
+              Forgot password?
+            </button>
             <p className="text-sm pt-2">
               Don't have an account?
               <Link to={"/signup"} className="link link-hover ml-1">

@@ -16,6 +16,21 @@ const Register = () => {
     const password = e.target.password.value;
     const url = e.target.url.value;
 
+    const uppercase = /[A-Z]/;
+    const lowercase = /[a-z]/;
+
+    if (password.length < 6) {
+      return alert("less than 6 charcters");
+    }
+    {
+      if (!uppercase.test(password)) {
+        return alert("Need one uppercase letter");
+      }
+      if (!lowercase.test(password)) {
+        return alert("Need one lowercase letter");
+      }
+    }
+
     registerUserWithEmailPassword(email, password)
       .then((userCredential) => {
         updateProfile(auth.currentUser, {
