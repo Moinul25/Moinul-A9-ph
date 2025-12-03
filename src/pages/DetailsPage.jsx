@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 
 const DetailsPage = () => {
   const [services, setServices] = useState([]);
+  const navigate = useNavigate();
 
   const { id } = useParams();
 
@@ -19,7 +20,6 @@ const DetailsPage = () => {
   return (
     <div className="min-h-screen bg-gray-100 flex justify-center items-center p-6">
       <div className="bg-white rounded-2xl shadow-xl max-w-lg w-full p-6">
-        {/* Title */}
         <h2 className="text-3xl font-bold text-center mb-4 text-blue-600">
           {findResult?.serviceName}
         </h2>
@@ -34,21 +34,21 @@ const DetailsPage = () => {
 
         <div className="mb-4 space-y-1">
           <p className="text-gray-800 font-semibold">
-            Provider:{" "}
+            Provider:
             <span className="font-normal text-gray-600">
               {findResult?.providerName}
             </span>
           </p>
 
           <p className="text-gray-800 font-semibold">
-            Email:{" "}
+            Email:
             <span className="font-normal text-gray-600">
               {findResult?.providerEmail}
             </span>
           </p>
 
           <p className="text-gray-800 font-semibold">
-            Category:{" "}
+            Category:
             <span className="font-normal text-gray-600">
               {findResult?.category}
             </span>
@@ -72,6 +72,12 @@ const DetailsPage = () => {
             Slots Available: {findResult?.slotsAvailable}
           </p>
         </div>
+        <button
+          onClick={() => navigate(-1)}
+          className="btn btn-primary w-full mt-4"
+        >
+          ⬅ Back
+        </button>
       </div>
     </div>
   );

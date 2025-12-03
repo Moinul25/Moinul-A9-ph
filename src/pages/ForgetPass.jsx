@@ -42,7 +42,6 @@ const ForgetPass = () => {
           </button>
         </form>
       </div>
-      <ToastContainer />
     </div>
   );
 };

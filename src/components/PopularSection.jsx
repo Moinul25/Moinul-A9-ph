@@ -46,12 +46,11 @@ const PopularSection = () => {
                 </p>
               </div>
 
-              <div className="card-actions justify-center pt-3">
-                <Link
-                  to={`/details/${service.id}`}
-                  className="btn btn-primary w-full"
-                >
-                  View Details
+              <div className="card-actions justify-center pt-2">
+                <Link to={`/details/${service?.serviceId}`}>
+                  <button className="btn btn-primary w-full">
+                    View Details
+                  </button>
                 </Link>
               </div>
             </div>

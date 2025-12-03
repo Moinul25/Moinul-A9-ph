@@ -49,7 +49,7 @@ const Footer = () => {
           <ul className="space-y-2 text-sm">
             <li className="flex space-x-1 items-center">
               <FaTwitter />
-              <span> Pet Care in Winter</span>
+              <span> Twitter</span>
             </li>
             <li className="flex space-x-1 items-center">
               <FaInstagram /> <span>Instagram</span>

@@ -16,7 +16,7 @@ const Navbar = () => {
 
   return (
     <nav className="bg-base-100 shadow-sm sticky top-0 z-50">
-      <div className="navbar max-w-7xl mx-auto px-4">
+      <div className="navbar max-w-7xl mx-auto px-3 ">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -54,9 +54,9 @@ const Navbar = () => {
 
           <Link
             to="/"
-            className="text-2xl font-bold flex items-center gap-2 text-primary"
+            className="text-2xl font-bold flex items-center gap-2 text-primary p-4"
           >
-            <MdOutlinePets className="text-3xl" />
+            <MdOutlinePets className="text-3xl " />
             PetPaws
           </Link>
         </div>
@@ -82,9 +82,9 @@ const Navbar = () => {
         </div>
         {user && (
           <div className="navbar-end">
-            <btn onClick={handleSignOut} className="btn btn-primary">
+            <button onClick={handleSignOut} className="btn btn-primary">
               Logout
-            </btn>
+            </button>
           </div>
         )}
 
@@ -96,7 +96,6 @@ const Navbar = () => {
           </div>
         )}
       </div>
-      <ToastContainer />
     </nav>
   );
 };

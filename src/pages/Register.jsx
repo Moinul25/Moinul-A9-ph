@@ -128,7 +128,6 @@ const Register = () => {
           </div>
         </form>
       </div>
-      <ToastContainer />
     </div>
   );
 };
