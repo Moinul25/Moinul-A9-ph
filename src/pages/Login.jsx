@@ -1,13 +1,14 @@
 import { signInWithEmailAndPassword } from "firebase/auth";
 import React, { useContext, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 import auth from "../firebase/firebase.config";
 import { Authcontext } from "../provider/AuthProvider";
 import { FcGoogle } from "react-icons/fc";
+import { toast, ToastContainer } from "react-toastify";
 
 const Login = () => {
   const { setUser, handleGoogleSignIn } = useContext(Authcontext);
-  const location = useLocation();
+
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
 
@@ -20,7 +21,8 @@ const Login = () => {
       .then((userCredential) => {
         const user = userCredential.user;
         setUser(user);
-        navigate(location.state ? location.state : "/");
+        toast("Login Successful!");
+        navigate("/");
       })
       .catch((err) => {
         console.log(err);
@@ -32,7 +34,8 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         setUser(user);
-        navigate(location.state);
+        toast("Google Login Successful!");
+        navigate(location.state || "/");
       })
       .catch((error) => console.log(error));
   };
@@ -97,6 +100,7 @@ const Login = () => {
           </div>
         </form>
       </div>
+      <ToastContainer />
     </div>
   );
 };

@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { Authcontext } from "../provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import auth from "../firebase/firebase.config";
+import { toast, ToastContainer } from "react-toastify";
 
 const Profile = () => {
   const { user, setUser } = useContext(Authcontext);
@@ -27,8 +28,7 @@ const Profile = () => {
           displayName: name,
           photoURL: url,
         });
-
-        alert("Profile Updated Successfully!");
+        toast("Profile Updated Successfully!");
         setIsOpen(false);
       })
       .catch((error) => {
@@ -42,7 +42,7 @@ const Profile = () => {
         <div className="flex flex-col items-center gap-3">
           <div className="avatar">
             <div className="mask mask-squircle w-28">
-              <img src={user?.photoURL} alt="profile" />
+              <img src={user?.photoURL} alt="Profile Photo" />
             </div>
           </div>
 
@@ -107,6 +107,7 @@ const Profile = () => {
           )}
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };

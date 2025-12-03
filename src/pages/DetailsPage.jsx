@@ -24,7 +24,6 @@ const DetailsPage = () => {
           {findResult?.serviceName}
         </h2>
 
-        {/* Image */}
         <div className="w-full h-full rounded-xl overflow-hidden mb-5">
           <img
             src={findResult?.image}
@@ -33,7 +32,6 @@ const DetailsPage = () => {
           />
         </div>
 
-        {/* Provider Info */}
         <div className="mb-4 space-y-1">
           <p className="text-gray-800 font-semibold">
             Provider:{" "}
@@ -57,12 +55,10 @@ const DetailsPage = () => {
           </p>
         </div>
 
-        {/* Description */}
         <p className="text-gray-700 leading-relaxed mb-4">
           {findResult?.description || "No description available."}
         </p>
 
-        {/* Price + Rating + Slots */}
         <div className="bg-gray-50 p-4 rounded-xl mb-4">
           <p className="text-lg font-semibold text-green-600">
             Price: ${findResult?.price}

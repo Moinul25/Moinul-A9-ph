@@ -1,13 +1,16 @@
 import React, { useContext } from "react";
-import { Link } from "react-router";
+import { Link, Navigate, useNavigate } from "react-router";
 import { Authcontext } from "../provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import auth from "../firebase/firebase.config";
 import { FcGoogle } from "react-icons/fc";
+import { toast, ToastContainer } from "react-toastify";
 
 const Register = () => {
   const { registerUserWithEmailPassword, setUser, user, handleGoogleSignIn } =
     useContext(Authcontext);
+
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,14 +23,14 @@ const Register = () => {
     const lowercase = /[a-z]/;
 
     if (password.length < 6) {
-      return alert("less than 6 charcters");
+      return toast("less than 6 charcters");
     }
     {
       if (!uppercase.test(password)) {
-        return alert("Need one uppercase letter");
+        return toast("Need one uppercase letter");
       }
       if (!lowercase.test(password)) {
-        return alert("Need one lowercase letter");
+        return toast("Need one lowercase letter");
       }
     }
 
@@ -39,6 +42,7 @@ const Register = () => {
         })
           .then(() => {
             setUser(userCredential.user);
+            navigate("/");
           })
           .catch((error) => {
             console.log(error);
@@ -124,6 +128,7 @@ const Register = () => {
           </div>
         </form>
       </div>
+      <ToastContainer />
     </div>
   );
 };

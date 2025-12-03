@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { CiStar } from "react-icons/ci";
+import { Link } from "react-router";
 
 const PopularSection = () => {
   const [services, setServices] = useState([]);
@@ -46,7 +47,12 @@ const PopularSection = () => {
               </div>
 
               <div className="card-actions justify-center pt-3">
-                <button className="btn btn-primary w-full">View Details</button>
+                <Link
+                  to={`/details/${service.id}`}
+                  className="btn btn-primary w-full"
+                >
+                  View Details
+                </Link>
               </div>
             </div>
           </div>

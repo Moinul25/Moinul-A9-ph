@@ -8,11 +8,13 @@ import Profile from "../pages/Profile";
 import PrivateRoute from "./PrivateRoute";
 import DetailsPage from "../pages/DetailsPage";
 import ForgetPass from "../pages/ForgetPass";
+import errorimg from "../assets/error-404.png";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
+
     children: [
       {
         path: "/",
@@ -24,6 +26,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/login",
+
         element: <Login></Login>,
       },
       {
@@ -49,6 +52,16 @@ export const router = createBrowserRouter([
       {
         path: "/forget/:email?",
         element: <ForgetPass></ForgetPass>,
+      },
+
+      {
+        path: "*",
+        element: (
+          <div className="flex flex-col items-center justify-center py-10">
+            <img src={errorimg} alt="" srcset="" />
+            <p className="text-gray-500 mt-7 text-lg">No Result Founded</p>
+          </div>
+        ),
       },
     ],
   },

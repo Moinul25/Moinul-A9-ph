@@ -4,11 +4,14 @@ import { Link } from "react-router";
 import { Authcontext } from "../provider/AuthProvider";
 import auth from "../firebase/firebase.config";
 import { signOut } from "firebase/auth";
+import { toast, ToastContainer } from "react-toastify";
 const Navbar = () => {
   const { user } = useContext(Authcontext);
 
   const handleSignOut = () => {
-    signOut(auth);
+    signOut(auth).then(() => {
+      toast("Logged out successfully!");
+    });
   };
 
   return (
@@ -93,6 +96,7 @@ const Navbar = () => {
           </div>
         )}
       </div>
+      <ToastContainer />
     </nav>
   );
 };
